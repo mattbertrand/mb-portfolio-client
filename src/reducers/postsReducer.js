@@ -10,7 +10,7 @@ const postsReducer = (state=initialState, action) => {
                 ...state,
                 loading: true
             }
-        case "SET_BLOGS":
+        case "SET_POSTS":
             return {
                 ...state,
                 loading: false,
