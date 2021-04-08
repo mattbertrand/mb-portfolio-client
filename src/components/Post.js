@@ -13,7 +13,7 @@ class Post extends Component {
                 <h3>{ title }</h3>
                 <p>{ content }</p>
                 <p>{ category }</p>
-                <img src={ image_link } />
+                <img alt="Post Featured" src={ image_link } />
                 <button onClick={() => this.handleOnClick()}> Delete Post </button>
             </div>
         )

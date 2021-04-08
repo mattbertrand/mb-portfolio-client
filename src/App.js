@@ -8,6 +8,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Index from './components/Index'
 import NewPost from './components/NewPost'
+import PostDetails from './components/PostDetails'
 import ErrorPage from './components/ErrorPage'
 
 
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path="/about" component={ About } />
           <Route exact path="/posts" component={ Index } />
           <Route exact path="/posts/new" component={ NewPost } />
+          <Route exact path="/posts/:id" component={ PostDetails } />
           <Route  component={ ErrorPage } />
         </Switch>
         <Footer />
