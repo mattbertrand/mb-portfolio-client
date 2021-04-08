@@ -8,7 +8,7 @@ class Post extends Component {
                 <h3>{ title }</h3>
                 <p>{ content }</p>
                 <p>{ category }</p>
-                <p>{ image_link }</p>
+                <img src={ image_link } />
             </div>
         )
     }
