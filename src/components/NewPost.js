@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addPost } from '../actions'
 
 class NewPost extends Component {
     state = {
@@ -14,11 +16,17 @@ handleChange = e => {
     })
 }
 
+handleSubmit = e => {
+    e.preventDefault()
+
+    this.props.addPost(this.state, this.props.history)
+}
+
     render() {
         return (
             <div>
                 <h3>Create New Project</h3>
-                <form>
+                <form onSubmit={ this.handleSubmit }>
                     <div>
                         <label htmlFor="title">Title</label>
                         <input type="text" name="title" id="title" value={this.state.title} onChange={ this.handleChange }/>
@@ -35,10 +43,11 @@ handleChange = e => {
                         <label htmlFor="image_link">Image</label>
                         <input type="text" name="image_link" id="image_link" value={this.state.image_link} onChange={ this.handleChange }/>
                     </div>
+                    <input type="submit" value="Add a Project" />
                 </form>
             </div>
         )
     }
 }
 
-export default NewPost
+export default connect(null, { addPost })(NewPost)
